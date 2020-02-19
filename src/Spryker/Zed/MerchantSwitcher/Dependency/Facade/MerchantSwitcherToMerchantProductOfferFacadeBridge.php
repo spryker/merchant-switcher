@@ -5,24 +5,24 @@
  * Use of this software requires acceptance of the Spryker Marketplace License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Client\MerchantSwitcher\Dependency\Client;
+namespace Spryker\Zed\MerchantSwitcher\Dependency\Facade;
 
 use Generated\Shared\Transfer\MerchantProductOfferCriteriaFilterTransfer;
 use Generated\Shared\Transfer\ProductOfferCollectionTransfer;
 
-class MerchantSwitcherToMerchantProductOfferClientBridge implements MerchantSwitcherToMerchantProductOfferClientInterface
+class MerchantSwitcherToMerchantProductOfferFacadeBridge implements MerchantSwitcherToMerchantProductOfferFacadeInterface
 {
     /**
-     * @var \Spryker\Client\MerchantProductOffer\MerchantProductOfferClientInterface
+     * @var \Spryker\Zed\MerchantProductOffer\Business\MerchantProductOfferFacadeInterface
      */
-    protected $merchantProductOfferClient;
+    protected $merchantProductOfferFacade;
 
     /**
-     * @param \Spryker\Client\MerchantProductOffer\MerchantProductOfferClientInterface $merchantProductOfferClient
+     * @param \Spryker\Zed\MerchantProductOffer\Business\MerchantProductOfferFacadeInterface $merchantProductOfferFacade
      */
-    public function __construct($merchantProductOfferClient)
+    public function __construct($merchantProductOfferFacade)
     {
-        $this->merchantProductOfferClient = $merchantProductOfferClient;
+        $this->merchantProductOfferFacade = $merchantProductOfferFacade;
     }
 
     /**
@@ -32,6 +32,6 @@ class MerchantSwitcherToMerchantProductOfferClientBridge implements MerchantSwit
      */
     public function getProductOfferCollection(MerchantProductOfferCriteriaFilterTransfer $merchantProductOfferCriteriaFilterTransfer): ProductOfferCollectionTransfer
     {
-        return $this->merchantProductOfferClient->getProductOfferCollection($merchantProductOfferCriteriaFilterTransfer);
+        return $this->merchantProductOfferFacade->getProductOfferCollection($merchantProductOfferCriteriaFilterTransfer);
     }
 }
