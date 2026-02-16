@@ -15,7 +15,6 @@ use Spryker\Zed\WishlistExtension\Dependency\Plugin\WishlistReloadItemsPluginInt
 /**
  * @method \Spryker\Zed\MerchantSwitcher\Business\MerchantSwitcherFacadeInterface getFacade()
  * @method \Spryker\Zed\MerchantSwitcher\MerchantSwitcherConfig getConfig()
- * @method \Spryker\Zed\MerchantSwitcher\Communication\MerchantSwitcherCommunicationFactory getFactory()
  */
 class SingleMerchantWishlistReloadItemsPlugin extends AbstractPlugin implements WishlistReloadItemsPluginInterface
 {
