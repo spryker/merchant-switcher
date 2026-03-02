@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\MerchantSwitchResponseTransfer;
 
 interface MerchantSwitcherInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantSwitchResponseTransfer
-     */
     public function switchMerchantInQuote(MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer): MerchantSwitchResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantSwitchResponseTransfer
-     */
     public function switchMerchantInQuoteItems(MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer): MerchantSwitchResponseTransfer;
 }

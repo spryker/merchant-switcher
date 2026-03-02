@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\MerchantSwitchResponseTransfer;
 
 interface MerchantSwitcherStubInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantSwitchResponseTransfer
-     */
     public function switchMerchantInQuote(MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer): MerchantSwitchResponseTransfer;
 }

@@ -14,9 +14,6 @@ use Spryker\Client\MerchantSwitcher\Zed\MerchantSwitcherStubInterface;
 
 class MerchantSwitcherFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\MerchantSwitcher\Zed\MerchantSwitcherStubInterface
-     */
     public function createMerchantSwitcherStub(): MerchantSwitcherStubInterface
     {
         return new MerchantSwitcherStub(
@@ -24,9 +21,6 @@ class MerchantSwitcherFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\MerchantSwitcher\Dependency\Client\MerchantSwitcherToZedRequestClientInterface
-     */
     public function getZedRequestClient(): MerchantSwitcherToZedRequestClientInterface
     {
         return $this->getProvidedDependency(MerchantSwitcherDependencyProvider::CLIENT_ZED_REQUEST);

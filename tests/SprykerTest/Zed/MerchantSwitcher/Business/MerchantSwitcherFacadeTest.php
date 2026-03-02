@@ -40,9 +40,6 @@ class MerchantSwitcherFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testSwitchMerchantInQuoteItemsReplacesProductOffersInQuote(): void
     {
         // Arrange
@@ -89,9 +86,6 @@ class MerchantSwitcherFacadeTest extends Unit
         $this->assertSame($itemTransfer->getMerchantReference(), $merchantTransfer2->getMerchantReference());
     }
 
-    /**
-     * @return void
-     */
     public function testSwitchMerchantInQuoteItemsDoesNothingIfNoReplacementFound(): void
     {
         // Arrange
@@ -132,9 +126,6 @@ class MerchantSwitcherFacadeTest extends Unit
         $this->assertSame($itemTransfer->getMerchantReference(), $merchantTransfer->getMerchantReference());
     }
 
-    /**
-     * @return void
-     */
     public function testSwitchMerchantInQuoteReplacesMerchantReferenceValue(): void
     {
         // Arrange
@@ -168,9 +159,6 @@ class MerchantSwitcherFacadeTest extends Unit
         $this->assertSame($quoteTransfer->getMerchantReference(), $merchantTransfer->getMerchantReference());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateMerchantInQuoteReturnsSuccessfulResponse(): void
     {
         // Arrange
@@ -205,9 +193,6 @@ class MerchantSwitcherFacadeTest extends Unit
         $this->assertTrue($singleMerchantQuoteValidationResponseTransfer->getIsSuccessful());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateMerchantInQuoteReturnsFailureResponse(): void
     {
         // Arrange
@@ -243,9 +228,6 @@ class MerchantSwitcherFacadeTest extends Unit
         $this->assertNotEmpty($singleMerchantQuoteValidationResponseTransfer->getErrors()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testSwitchMerchantInWishlistItemsSuccessful(): void
     {
         // Arrange
@@ -317,9 +299,6 @@ class MerchantSwitcherFacadeTest extends Unit
         $this->assertEquals($productOfferReference2, $actualWishlistItemTransfer2->getProductOfferReference());
     }
 
-    /**
-     * @return void
-     */
     public function testSwitchMerchantInWishlistItemsDoesNothingNoMatchingProductOffer(): void
     {
         // Arrange
@@ -383,9 +362,6 @@ class MerchantSwitcherFacadeTest extends Unit
         $this->assertEquals($productOfferReference2, $actualWishlistItemTransfer2->getProductOfferReference());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateWishlistItemsSuccessfully(): void
     {
         // Arrange
@@ -428,9 +404,6 @@ class MerchantSwitcherFacadeTest extends Unit
         $this->assertEquals(0, $validationResponseTransfer->getErrorMessages()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateWishlistItemsFailedWrongMerchantReference(): void
     {
         // Arrange

@@ -39,11 +39,6 @@ class MerchantSwitcher implements MerchantSwitcherInterface
      */
     protected $cartFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantSwitcher\Dependency\Facade\MerchantSwitcherToMerchantProductOfferFacadeInterface $merchantProductOfferFacade
-     * @param \Spryker\Zed\MerchantSwitcher\Dependency\Facade\MerchantSwitcherToQuoteFacadeInterface $quoteFacade
-     * @param \Spryker\Zed\MerchantSwitcher\Dependency\Facade\MerchantSwitcherToCartFacadeInterface $cartFacade
-     */
     public function __construct(
         MerchantSwitcherToMerchantProductOfferFacadeInterface $merchantProductOfferFacade,
         MerchantSwitcherToQuoteFacadeInterface $quoteFacade,
@@ -54,11 +49,6 @@ class MerchantSwitcher implements MerchantSwitcherInterface
         $this->cartFacade = $cartFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantSwitchResponseTransfer
-     */
     public function switchMerchantInQuote(MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer): MerchantSwitchResponseTransfer
     {
         $merchantSwitchRequestTransfer
@@ -75,11 +65,6 @@ class MerchantSwitcher implements MerchantSwitcherInterface
         return (new MerchantSwitchResponseTransfer())->setQuote($quoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantSwitchResponseTransfer
-     */
     public function switchMerchantInQuoteItems(MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer): MerchantSwitchResponseTransfer
     {
         $merchantSwitchRequestTransfer

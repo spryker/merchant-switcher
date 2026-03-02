@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\WishlistTransfer;
 
 interface MerchantWishlistValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\WishlistTransfer $wishlistTransfer
-     *
-     * @return \Generated\Shared\Transfer\ValidationResponseTransfer
-     */
     public function validateItems(WishlistTransfer $wishlistTransfer): ValidationResponseTransfer;
 }

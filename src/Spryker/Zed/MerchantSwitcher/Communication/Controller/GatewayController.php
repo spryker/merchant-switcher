@@ -16,11 +16,6 @@ use Spryker\Zed\Kernel\Communication\Controller\AbstractGatewayController;
  */
 class GatewayController extends AbstractGatewayController
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantSwitchResponseTransfer
-     */
     public function switchMerchantInQuoteAction(MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer): MerchantSwitchResponseTransfer
     {
         return $this->getFacade()->switchMerchantInQuote($merchantSwitchRequestTransfer);

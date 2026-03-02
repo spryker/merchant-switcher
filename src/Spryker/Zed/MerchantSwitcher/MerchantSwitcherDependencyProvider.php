@@ -49,11 +49,6 @@ class MerchantSwitcherDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addQuoteFacade(Container $container): Container
     {
         $container->set(static::FACADE_QUOTE, function (Container $container) {
@@ -63,11 +58,6 @@ class MerchantSwitcherDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartFacade(Container $container): Container
     {
         $container->set(static::FACADE_CART, function (Container $container) {
@@ -77,11 +67,6 @@ class MerchantSwitcherDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantProductOfferFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_PRODUCT_OFFER, function (Container $container) {

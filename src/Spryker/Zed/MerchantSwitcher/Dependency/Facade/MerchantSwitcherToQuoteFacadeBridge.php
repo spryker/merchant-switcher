@@ -33,11 +33,6 @@ class MerchantSwitcherToQuoteFacadeBridge implements MerchantSwitcherToQuoteFaca
         return $this->quoteFacade->getStorageStrategy();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function updateQuote(QuoteTransfer $quoteTransfer): QuoteResponseTransfer
     {
         return $this->quoteFacade->updateQuote($quoteTransfer);

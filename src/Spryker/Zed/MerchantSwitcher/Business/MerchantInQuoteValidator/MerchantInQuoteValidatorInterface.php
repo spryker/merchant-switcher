@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SingleMerchantQuoteValidationResponseTransfer;
 
 interface MerchantInQuoteValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SingleMerchantQuoteValidationRequestTransfer $singleMerchantQuoteValidationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\SingleMerchantQuoteValidationResponseTransfer
-     */
     public function validateMerchantInQuoteItems(
         SingleMerchantQuoteValidationRequestTransfer $singleMerchantQuoteValidationRequestTransfer
     ): SingleMerchantQuoteValidationResponseTransfer;

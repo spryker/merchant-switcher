@@ -14,11 +14,6 @@ use Generated\Shared\Transfer\WishlistTransfer;
 
 class MerchantWishlistValidator implements MerchantWishlistValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\WishlistTransfer $wishlistTransfer
-     *
-     * @return \Generated\Shared\Transfer\ValidationResponseTransfer
-     */
     public function validateItems(WishlistTransfer $wishlistTransfer): ValidationResponseTransfer
     {
         $validationResponseTransfer = (new ValidationResponseTransfer())

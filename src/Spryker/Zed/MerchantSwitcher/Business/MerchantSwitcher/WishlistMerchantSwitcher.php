@@ -24,19 +24,11 @@ class WishlistMerchantSwitcher implements WishlistMerchantSwitcherInterface
      */
     protected $merchantProductOfferFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantSwitcher\Dependency\Facade\MerchantSwitcherToMerchantProductOfferFacadeInterface $merchantProductOfferFacade
-     */
     public function __construct(MerchantSwitcherToMerchantProductOfferFacadeInterface $merchantProductOfferFacade)
     {
         $this->merchantProductOfferFacade = $merchantProductOfferFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantSwitchResponseTransfer
-     */
     public function switchMerchantInWishlistItems(
         MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
     ): MerchantSwitchResponseTransfer {
@@ -85,12 +77,6 @@ class WishlistMerchantSwitcher implements WishlistMerchantSwitcherInterface
         return null;
     }
 
-    /**
-     * @param string $merchantReference
-     * @param \Generated\Shared\Transfer\WishlistTransfer $wishlistTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferCollectionTransfer
-     */
     protected function getProductOffersForWishlistItems(
         string $merchantReference,
         WishlistTransfer $wishlistTransfer

@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\MerchantSwitchResponseTransfer;
 
 interface WishlistMerchantSwitcherInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantSwitchResponseTransfer
-     */
     public function switchMerchantInWishlistItems(
         MerchantSwitchRequestTransfer $merchantSwitchRequestTransfer
     ): MerchantSwitchResponseTransfer;

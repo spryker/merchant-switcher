@@ -18,9 +18,6 @@ class MerchantSwitcherStub implements MerchantSwitcherStubInterface
      */
     protected $zedRequestClient;
 
-    /**
-     * @param \Spryker\Client\MerchantSwitcher\Dependency\Client\MerchantSwitcherToZedRequestClientInterface $zedRequestClient
-     */
     public function __construct(MerchantSwitcherToZedRequestClientInterface $zedRequestClient)
     {
         $this->zedRequestClient = $zedRequestClient;
