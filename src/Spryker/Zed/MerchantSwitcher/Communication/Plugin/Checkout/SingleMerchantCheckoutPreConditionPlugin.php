@@ -20,6 +20,8 @@ use Spryker\Zed\Kernel\Communication\AbstractPlugin;
  */
 class SingleMerchantCheckoutPreConditionPlugin extends AbstractPlugin implements CheckoutPreConditionPluginInterface
 {
+    protected const string PARAMETER_GROUP_KEY = 'groupKey';
+
     /**
      * {@inheritDoc}
      * - Goes through QuoteTransfer.items and compares ItemTransfer.merchantReference with QuoteTransfer.merchantReference.
@@ -47,9 +49,15 @@ class SingleMerchantCheckoutPreConditionPlugin extends AbstractPlugin implements
 
         $validationPassed = true;
         foreach ($singleMerchantQuoteValidationResponseTransfer->getErrors() as $messageTransfer) {
+            $parameters = $messageTransfer->getParameters();
+            $groupKey = $parameters[static::PARAMETER_GROUP_KEY] ?? null;
+            unset($parameters[static::PARAMETER_GROUP_KEY]);
+
             $checkoutErrorTransfer = (new CheckoutErrorTransfer())
                 ->setMessage($messageTransfer->getValue())
-                ->setParameters($messageTransfer->getParameters());
+                ->setParameters($parameters)
+                ->setErrorType($this->getConfig()->getCheckoutErrorType())
+                ->setGroupKey($groupKey);
 
             $checkoutResponseTransfer->addError($checkoutErrorTransfer);
             $validationPassed = false;

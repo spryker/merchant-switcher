@@ -14,6 +14,8 @@ use Spryker\Zed\Kernel\AbstractBundleConfig;
  */
 class MerchantSwitcherConfig extends AbstractBundleConfig
 {
+    protected const string CHECKOUT_ERROR_TYPE = 'MerchantProductUnavailable';
+
     /**
      * @api
      *
@@ -22,5 +24,16 @@ class MerchantSwitcherConfig extends AbstractBundleConfig
     public function isMerchantSwitcherEnabled(): bool
     {
         return $this->getSharedConfig()->isMerchantSwitcherEnabled();
+    }
+
+    /**
+     * Specification:
+     * - Returns the error type identifier used in CheckoutErrorTransfer for errors produced by this module.
+     *
+     * @api
+     */
+    public function getCheckoutErrorType(): string
+    {
+        return static::CHECKOUT_ERROR_TYPE;
     }
 }

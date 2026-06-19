@@ -14,6 +14,8 @@ use Generated\Shared\Transfer\SingleMerchantQuoteValidationResponseTransfer;
 
 class MerchantInQuoteValidator implements MerchantInQuoteValidatorInterface
 {
+    protected const string PARAMETER_GROUP_KEY = 'groupKey';
+
     public function validateMerchantInQuoteItems(
         SingleMerchantQuoteValidationRequestTransfer $singleMerchantQuoteValidationRequestTransfer
     ): SingleMerchantQuoteValidationResponseTransfer {
@@ -30,6 +32,7 @@ class MerchantInQuoteValidator implements MerchantInQuoteValidatorInterface
                     ->setParameters([
                         '%product_name%' => $itemTransfer->getName(),
                         '%sku%' => $itemTransfer->getSku(),
+                        static::PARAMETER_GROUP_KEY => $itemTransfer->getGroupKey(),
                     ]);
             }
         }
