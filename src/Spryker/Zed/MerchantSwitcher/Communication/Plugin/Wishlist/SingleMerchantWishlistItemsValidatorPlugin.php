@@ -43,7 +43,7 @@ class SingleMerchantWishlistItemsValidatorPlugin extends AbstractPlugin implemen
      */
     public function validateItems(WishlistTransfer $wishlistTransfer): ValidationResponseTransfer
     {
-        return $validationResponseTransfer = $this->getFacade()
+        return $this->getFacade()
             ->validateWishlistItems($wishlistTransfer);
     }
 }
